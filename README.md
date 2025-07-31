@@ -1,64 +1,70 @@
-# stm32-lcd-interface-project
-This project demonstrates how to interface a 16x2 LCD with an STM32 microcontroller using STM32CubeIDE. It displays static text on the LCD by configuring GPIOs in 4-bit mode.         
-# STM32 LCD and LED Control Project
+# STM32 LCD and LED Control (Simulation-Only)
 
-This project demonstrates how to interface an STM32F401RE microcontroller with:
-- A 20x4 character LCD
-- Three LEDs (Red, Green, Blue)
+This project demonstrates how to simulate an STM32F401RE microcontroller interfacing with:
+- A 20x4 Character LCD (LM044)
+- Red, Green, and Blue LEDs  
+using STM32CubeIDE and **Proteus** simulation — **no hardware is required**.
 
-It uses STM32 HAL and custom LCD 4-bit mode library.
+## 🧠 Project Summary
+- Displays **"LCD Test"** on the LCD using 4-bit communication mode.
+- Blinks Red, Green, and Blue LEDs with delays.
+- Developed using **STM32 HAL** libraries.
 
-## 🔧 Features
-- LCD initialized and prints “LCD Test”
-- Blinking Red, Green, and Blue LEDs
-- Delay functions to show timing control
+---
 
-## 💻 Hardware
-- STM32F401RE (Nucleo board or Proteus model)
-- LM016L / LM044 LCDs (16x2 or 20x4)
-- LEDs with current-limiting resistors
+## ⚙️ Tools Used
+- 🛠 **STM32CubeIDE** – Code development and build
+- 💡 **Proteus 8 Professional** – Circuit simulation (no physical board needed)
+- 📦 **HAL Library** – STM32F4xx Hardware Abstraction Layer
+
+---
+
+## 🧩 Features
+- LCD initialization and string printing
+- GPIO toggling to blink LEDs
+- Software delay for timing
+- Fully simulated using Proteus
+
+---
+
+## 🔌 Hardware (Simulated in Proteus)
+- STM32F401RE (MCU Model in Proteus)
+- LM044 LCD (20x4 or compatible)
+- 3 LEDs (Red, Green, Blue) with resistors
 - Potentiometer for LCD contrast
+- External Crystal and Reset Circuit (if needed for realism)
 
-## 📁 Files
-- `main.c` – main application logic
-- `lcd.c`, `lcd.h` – LCD driver
-- `schematic.png` – circuit diagram from Proteus
+---
 
-## 📷 Schematic
+## 📁 Project Files
+- `Core/Src/main.c` – Main logic for LED blinking and LCD output
+- `lcd.c`, `lcd.h` – Custom 4-bit LCD driver
+- `schematic.png` – Circuit diagram used in Proteus
+- `.ioc` file – CubeMX configuration file (if applicable)
+
+---
+
+## 🧪 How to Simulate
+1. Open the project in **STM32CubeIDE**.
+2. Build and compile the project to generate `.hex` file.
+3. In **Proteus**, load the `.hex` into STM32 model.
+4. Run simulation – LCD will display text, and LEDs will blink in sequence.
+
+---
+
+## 📌 Notes
+- This project does **not require real hardware**.
+- Perfect for learning STM32 basics, GPIO control, and LCD interfacing in simulation.
+- You can later migrate to real hardware if needed.
+
+---
+
+## 📷 Circuit Schematic  
 ![Schematic](schematic.png)
 
-## 🛠 Tools
-- STM32CubeIDE
-- Proteus 8 or later for simulation
-- STM32 HAL drivers
-
-## 🔄 Simulation
-You can simulate the project using QEMU (with difficulty) or directly inside Proteus using this schematic.
-
 ---
 
-### 3. ✅ **Create a GitHub Repository**
-
-1. Go to [https://github.com](https://github.com)
-2. Log in to your account
-3. Click the green **“New”** button (top-left of your Repositories page)
-4. Fill in:
-   - **Repository name:** `STM32_LCD_LED_Project`
-   - Description: _"LCD and LED control using STM32F401RE and Proteus schematic"_
-   - **Set to Public** (unless private is needed)
-   - Initialize with a README → **DO NOT CHECK THIS** (you already made one)
-5. Click **“Create repository”**
-
----
-
-### 4. ✅ **Upload Files Using Git (Terminal Method)**
-
-If you have Git installed, do this in your terminal:
-
-```bash
-cd path/to/STM32_LCD_LED_Project
-git init
-git remote add origin https://github.com/yourusername/STM32_LCD_LED_Project.git
-git add .
-git commit -m "Initial commit: STM32 LCD and LED project"
-git push -u origin master
+## 📤 GitHub Repository Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/STM32_LCD_LED_Simulation.git
